@@ -8,6 +8,7 @@ def dünya_kısa_acıklama_cek(url):
     # Sayfadaki ilk <p> etiketini bul ve metnini alıyorum
     p_etiketi = soup.find("p")
     return p_etiketi.text if p_etiketi else "Kısa açıklama bulunamadı."
+    # test
 
 def google_haber_dünya_haber_cekici(Dünya):
     # Google Haberler'in Dünya kategorisine giderek sayfa içeriğini çekiyorum
