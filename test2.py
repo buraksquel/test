@@ -15,6 +15,7 @@ def google_news(News):
 
     haber_listesi = []
 
+    # Kategorilere göre işlemleri ayarla
     if "spor" in News.lower():
         kategori = "Spor"
         baslik_prefix = "Spor Verileri: "
@@ -28,6 +29,7 @@ def google_news(News):
         kategori = "Dünya"
         baslik_prefix = "Dünya Verileri: "
     else:
+        # Bilinmeyen kategori durumunda çık
         print("Geçersiz kategori.")
         return
 
@@ -43,6 +45,7 @@ def google_news(News):
         full_url = f"https://news.google.com{kısa_acıklama_url}"
         kısa_acıklama = kısa_acıklama_cek(full_url)
 
+        # Haber bilgilerini ekle
         haber_bilgi = {
             "siralama": siralama,
             "kategori": kategori,
@@ -55,6 +58,7 @@ def google_news(News):
 
         haber_listesi.append(haber_bilgi)
 
+    # Haberleri yazdır
     for haber in haber_listesi:
         print(f"{baslik_prefix}Sıralama: {haber['siralama']}")
         print(f"{baslik_prefix}Kategori: {haber['kategori']}")
@@ -65,6 +69,7 @@ def google_news(News):
         print(f"{baslik_prefix}URL: {haber['url']}")
         print("***********************************")
 
+# Kategorileri belirterek haberleri çek
 google_news("spor")
 google_news("sağlık") 
 google_news("iş")
