@@ -33,7 +33,7 @@ def google_news(News, dosya_adı):
 
     haberler = soup.find_all("div", class_="f9uzM")
 
-    with open(dosya_adı, 'w', encoding='utf-8') as dosya:
+    with open(dosya_adı, 'w', encoding='utf-8') as dosya: 
         for siralama, haber_bilgisi in enumerate(haberler, start=1):
             kaynak = haber_bilgisi.find("div", {"class": "a7P8l"}).text.strip()
             baslik = haber_bilgisi.find("a", class_="gPFEn").text.strip()
