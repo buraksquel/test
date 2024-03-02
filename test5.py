@@ -26,7 +26,6 @@ def google_news(News, dosya_adı):
     response = requests.get(base_url)
     if response.status_code != 200:
         return
-
     html_icerigi = response.content
     soup = BeautifulSoup(html_icerigi, "html.parser")
 
