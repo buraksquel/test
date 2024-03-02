@@ -29,7 +29,7 @@ def google_news(News):
         world_comment_relative = world_soup.find("a", class_="gPFEn").get("href")
         world_comment_absolute = urljoin(world_link_absolute, world_comment_relative)
         
-        # Kısa açıklama çekme fonksiyonunu kullanarak tüm haberleri al
+      
         kisa_aciklama = verileri_cekme(world_comment_absolute)
 
         world_date_time = world_soup.find("time", class_="hvbAAd").get("datetime")
@@ -48,10 +48,8 @@ def google_news(News):
 
     return haber_listesi
 
-# Veri çekme fonksiyonunu çağır
 dunya_haberleri = google_news("News")
 
-# Elde edilen verileri ekrana yazdır
 for haber in dunya_haberleri:
     print("Sıralama:", haber["sıralama"])
     print("Başlık:", haber["baslik"])
